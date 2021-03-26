@@ -21,6 +21,9 @@ struct LandMarkList: View {
 
 struct LandMarkList_Previews: PreviewProvider {
     static var previews: some View {
-        LandMarkList()
+        ForEach(["iPhone SE (2nd generation)", "iPhone XS Max"], id: \.self) { deviceName in
+            LandMarkList()
+                .previewDevice(PreviewDevice(rawValue: deviceName))
+        }
     }
 }
